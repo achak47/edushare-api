@@ -10,6 +10,7 @@ const adview = require('./adview') ;
 const queryview = require('./qview') ;
 const del = require('./deletead') ;
 const knex = require('knex') ;
+const port = 3001 ;
 const db = knex({
     client: 'pg',
     connection: {
@@ -53,6 +54,6 @@ app.get('/adview',(req,res)=>{ adview.viewad(req,res,db)})
 app.post('/deletead',(req,res)=>{ del.deletead(req,res,db,bcrypt)}) 
 app.post('/queries',(req,res)=>{ queries.userqueries(req,res,db)}) 
 app.get('/queryview',(req,res)=>{ queryview.viewquery(req,res,db)}) 
-app.listen(3001 , ()=> {
+app.listen(process.env.PORT || port , ()=> {
     console.log("App is running") ;
   })
