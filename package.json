@@ -2,8 +2,12 @@
   "name": "edushare-api",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +16,7 @@
     "bcrypt": "^5.0.1",
     "bcrypt-nodejs": "0.0.3",
     "cors": "^2.8.5",
+    "express": "^4.17.1",
     "googleapis": "^39.2.0",
     "knex": "^0.95.11",
     "pg": "^8.7.1"
